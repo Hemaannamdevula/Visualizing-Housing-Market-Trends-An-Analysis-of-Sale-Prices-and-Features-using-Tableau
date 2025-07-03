@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<style>
+    /* Optional background gradient */
+    body {
+        background: linear-gradient(to right, #e0eafc, #cfdef3);
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 75vh;
+        text-align: center;
+    }
+
+    .home-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #003366;
+    }
+
+    .home-container p {
+        max-width: 800px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .get-started-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 18px;
+        color: white;
+        background-color: #007BFF;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .get-started-btn:hover {
+        background-color: #0056b3;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #f1f1f1;
+        margin-top: 40px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        .home-container h2 {
+            font-size: 2rem;
+        }
+
+        .home-container p {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<div class="home-container">
+    <h2>Welcome to the Housing Market Visualization App</h2>
+    <p>
+        Explore housing price trends, uncover insights, and understand how features like location, size, and year built impact the cost of homes.
+        Powered by Tableau visualizations and a user-friendly Flask interface.
+    </p>
+    <a href="{{ url_for('dashboard') }}" class="get-started-btn">Get Started</a>
+</div>
+
+<footer>
+    &copy; 2025 Visualizing Housing Market Trends | Built with Flask & Tableau
+</footer>
+{% endblock %}
